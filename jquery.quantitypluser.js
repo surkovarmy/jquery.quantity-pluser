@@ -17,7 +17,7 @@
         step: 1, //Шаг
         max: null, //Максимальное колво
         min: 0, //Минимально
-        callback: function(){console.log('default')}
+        callback: function(){}
     };
     /**
      * Методы плагина
