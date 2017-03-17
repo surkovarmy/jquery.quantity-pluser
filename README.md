@@ -2,18 +2,18 @@
 Кнопки + и - для указания количества в input
 Плагин делает вставку кнопок <button> до и после input - минус и плюс соответственно. Плюсует и вычитает значения в input с заданым шагом, в заданом диапазоне, так же манипулирует значениями при ручном вводе в поле input.
 
-##Установка
+## Установка
 ```bash
 <script type="text/javascript" src="jquery.quantitypluser.js"></script>
 ```
 
-###HTML
+### HTML
 ```bash
 <div class="quantity">
   <input type="text" size="3" title="Количество" value="1" id="quantity">
 </div>
 ```
-###CSS
+### CSS
 ```bash
 .quantity {
   -webkit-user-select: none;
