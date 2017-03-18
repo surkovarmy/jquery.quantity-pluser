@@ -65,6 +65,6 @@ $('#quantity').quantityPluser({
 	min: 1,
 	max: 15
 }).change(function(value) {
-	console.log('Value changes: ' + value);
+	console.log('Value change: ' + value);
 });
 ```
