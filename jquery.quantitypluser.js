@@ -1,8 +1,10 @@
 /**
  * Jquery Плагин +- для input
+ * Разработано в комании Prodvigaeff.ru Date: 14.03.2017 Time: 13:21
  * @name QuantityPluser
+ * @copyright Prodvigaeff.ru <info@prodvigaeff.ru>
  * @author Большагин Вячеслав <gbublik@gmail.com>
- * @version 1.0
+ * @version 1.1
  */
 (function ($) {
     /**
@@ -15,7 +17,7 @@
         step: 1, //Шаг
         max: null, //Максимальное колво
         min: 0, //Минимально
-        callback: function(){}
+        callback: function(){console.log('default')}
     };
     /**
      * Методы плагина
@@ -29,14 +31,14 @@
     /**
      * Инициализирует обработчики
      * @param {int} index
-     * @param input
+     * @param {DOM} input
      * @private
      */
     var _attacheHandlers = function (index, input) {
         if (!$(input).data('qp'))
         {
-            $(input).before('<button class="before">-</button>');
-            $(input).after('<button class="after">+</button>');
+            $(input).before('<button type="button" class="before">-</button>');
+            $(input).after('<button type="button" class="after">+</button>');
             $(input).data('qp', true);
             if (!$(input).data('qpstep')) $(input).data('qpstep', this.options.step);
             if (!$(input).data('qpmax')) $(input).data('qpmax', this.options.max);
@@ -70,7 +72,7 @@
         if (input.data('qpmax') != null && ((value + input.data('qpstep')) > input.data('qpmax'))) input.val(input.data('qpmax'));
         else input.val(value + input.data('qpstep'));
         _actualBtn(this, input);
-        this.options.callback.apply(this, [input.val()]);
+        this.options.callback.apply(input, [input.val()]);
     };
 
     /**
@@ -85,7 +87,7 @@
         if (input.data('qpmin') != null && ((value - input.data('qpstep')) < input.data('qpmin'))) input.val(input.data('qpmin'));
         else input.val(value - input.data('qpstep'));
         _actualBtn(this, input);
-        this.options.callback.apply(this, [input.val()]);
+        this.options.callback.apply(input, [input.val()]);
     };
 
     /**
@@ -121,7 +123,7 @@
     var _onChangeInput = function (e)
     {
         _actualBtn(this, $(e.currentTarget), true);
-        this.options.callback.apply(this, [$(e.currentTarget).val()]);
+        this.options.callback.apply($(e.currentTarget), [$(e.currentTarget).val()]);
     }
 
     /**
