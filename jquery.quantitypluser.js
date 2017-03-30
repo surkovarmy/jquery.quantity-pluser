@@ -17,6 +17,7 @@
         step: 1, //Шаг
         max: null, //Максимальное колво
         min: 0, //Минимально
+        generateBtn: true,
         callback: function(){console.log('default')}
     };
     /**
@@ -37,8 +38,11 @@
     var _attacheHandlers = function (index, input) {
         if (!$(input).data('qp'))
         {
-            $(input).before('<button type="button" class="before">-</button>');
-            $(input).after('<button type="button" class="after">+</button>');
+            if (this.options.generateBtn)
+            {
+                $(input).before('<button type="button" class="before">-</button>');
+                $(input).after('<button type="button" class="after">+</button>');
+            }
             $(input).data('qp', true);
             if (!$(input).data('qpstep')) $(input).data('qpstep', this.options.step);
             if (!$(input).data('qpmax')) $(input).data('qpmax', this.options.max);
