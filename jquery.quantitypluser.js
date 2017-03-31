@@ -32,7 +32,7 @@
     /**
      * Инициализирует обработчики
      * @param {int} index
-     * @param {DOM} input
+     * @param input
      * @private
      */
     var _attacheHandlers = function (index, input) {
