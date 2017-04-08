@@ -1,7 +1,6 @@
 /**
  * Jquery Плагин +- для input
  * @name QuantityPluser
- * @copyright Prodvigaeff.ru <info@prodvigaeff.ru>
  * @author Большагин Вячеслав <gbublik@gmail.com>
  * @version 1.1
  */
