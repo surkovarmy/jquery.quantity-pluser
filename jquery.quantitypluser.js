@@ -1,6 +1,5 @@
 /**
  * Jquery Плагин +- для input
- * Разработано в комании Prodvigaeff.ru Date: 14.03.2017 Time: 13:21
  * @name QuantityPluser
  * @copyright Prodvigaeff.ru <info@prodvigaeff.ru>
  * @author Большагин Вячеслав <gbublik@gmail.com>
